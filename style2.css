@@ -1,0 +1,331 @@
+/* ==========================================================================
+   1. VARIABLES CSS
+   ========================================================================== */
+:root {
+    --color-orange: #F27A22;
+    --color-orange-hover: #D96514;
+    --color-dark-blue: #092E46;
+    --color-text-main: #102A43;
+    --color-text-muted: #486581;
+    --color-white: #FFFFFF;
+    --color-border-light: #E4E7EB;
+    --color-badge-yellow: #FFD43F;
+
+    --font-serif: 'Lora', Georgia, serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --max-width: 1240px;
+    --transition-smooth: all 0.25s ease-in-out;
+}
+
+/* ==========================================================================
+   2. RESET Y PANTALLA COMPLETA (SIN SCROLL)
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text-main);
+    background-color: var(--color-white);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* Contenedor Flex Principal */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Componentes Botones */
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-align: center;
+}
+.btn--primary { background-color: var(--color-orange); color: var(--color-white); }
+.btn--primary:hover { background-color: var(--color-orange-hover); transform: translateY(-1px); }
+.btn--outline { background-color: transparent; border: 1px solid var(--color-text-main); color: var(--color-text-main); }
+.btn--outline:hover { background-color: var(--color-text-main); color: var(--color-white); }
+
+/* ==========================================================================
+   3. TOP BAR AZUL
+   ========================================================================== */
+.top-bar {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: 8px 0;
+    width: 100%;
+    flex: 0 0 auto;
+}
+.top-bar__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.top-bar__lang {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+.top-bar__lang::after {
+    content: '';
+    display: inline-block;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid var(--color-white);
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   4. HEADER
+   ========================================================================== */
+.header {
+    width: 100%;
+    border-bottom: 1px solid var(--color-border-light);
+    padding: 15px 0;
+    flex: 0 0 auto;
+}
+.header__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__logo-area { display: flex; align-items: center; font-size: 20px; font-weight: bold; }
+.logo-moodle { color: var(--color-orange); }
+.logo-divider { margin: 0 8px; color: #BCCCDC; font-weight: 300; }
+.logo-innova { color: var(--color-text-main); }
+.logo-innova__badge {
+    background-color: var(--color-badge-yellow);
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+    vertical-align: super;
+}
+.navigation__list { display: flex; gap: 30px; }
+.navigation__link {
+    font-size: 14px; color: var(--color-text-muted); font-weight: 500;
+    display: flex; align-items: center; transition: var(--transition-smooth);
+}
+.navigation__link:hover { color: var(--color-text-main); }
+.navigation__item--dropdown .navigation__link::after {
+    content: ''; margin-left: 6px;
+    border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid var(--color-text-muted);
+}
+.header__actions { display: flex; align-items: center; gap: 20px; }
+.header__link-contact { font-size: 14px; font-weight: 500; color: var(--color-text-main); }
+
+/* ==========================================================================
+   5. SECCIÓN HERO
+   ========================================================================== */
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 2vh 0;
+    min-height: 0;
+}
+.hero__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+.hero__badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; color: var(--color-text-muted);
+    margin-bottom: 2vh;
+}
+.hero__badge-dot { width: 8px; height: 8px; background-color: var(--color-orange); border-radius: 50%; }
+.hero__title {
+    font-family: var(--font-serif);
+    font-size: 36px; font-weight: 500; line-height: 1.2;
+    color: var(--color-text-main); margin-bottom: 24px;
+}
+.hero__right { padding-top: 0; }
+.hero__description { font-size: 16px; color: var(--color-text-muted); line-height: 1.6; }
+
+/* ==========================================================================
+   6. SECCIÓN FEATURES
+   ========================================================================== */
+.features {
+    flex: 0 0 auto;
+    padding: 2vh 0;
+    border-top: 1px solid var(--color-border-light);
+}
+.features__container {
+    max-width: var(--max-width); margin: 0 auto; padding: 0 20px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+}
+.features__item { padding: 5px 20px; font-size: 13px; color: var(--color-text-muted); }
+.features__item:not(:last-child) { border-right: 1px solid var(--color-border-light); }
+.features__item:first-child { padding-left: 0; }
+
+/* ==========================================================================
+   7. BANNER INFERIOR & WIDGET
+   ========================================================================== */
+.banner-footer {
+    flex: 0 0 auto;
+    height: 25vh;
+    background-color: var(--color-dark-blue);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.banner-footer__container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+.banner-footer__title {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    color: var(--color-white);
+    max-width: 500px;
+    font-weight: 500;
+}
+.banner-footer::after {
+    content: '';
+    position: absolute;
+    bottom: -15vh;
+    right: -5vh;
+    width: 55vh;
+    height: 55vh;
+    background-color: var(--color-orange);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Widget Flotante */
+.widget-wrapper {
+    position: absolute; right: 40px; bottom: 0;
+    z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.widget-tooltip {
+    background-color: var(--color-white); color: var(--color-text-main);
+    font-weight: 500; font-size: 13px; padding: 6px 12px; border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); position: relative;
+    animation: bounce 2s infinite ease-in-out;
+}
+.widget-tooltip::after {
+    content: ''; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%);
+    border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid var(--color-white);
+}
+.widget-btn {
+    width: 56px; height: 56px; background-color: var(--color-dark-blue);
+    border: none; border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: var(--transition-smooth);
+}
+.widget-btn:hover { transform: scale(1.08); background-color: #0b3857; }
+.widget-btn__icon { position: relative; width: 24px; height: 24px; }
+
+/* Hélices del widget (Generadas con CSS) */
+.blade {
+    position: absolute; width: 9px; height: 9px;
+    background-color: #C3DAF0; border-radius: 50% 50% 0 50%;
+    transition: transform 0.3s ease;
+}
+.blade:nth-child(1) { top: 0; left: 8px; transform: rotate(0deg); }
+.blade:nth-child(2) { top: 8px; right: 0; transform: rotate(90deg); }
+.blade:nth-child(3) { bottom: 0; left: 8px; transform: rotate(180deg); }
+.blade:nth-child(4) { top: 8px; left: 0; transform: rotate(270deg); }
+
+/* Rotar aspas al hacer hover */
+.widget-btn:hover .widget-btn__icon { animation: spin 3s linear infinite; }
+
+/* Animaciones */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* ==========================================================================
+   8. RESPONSIVE BÁSICO (Permite scroll solo en móviles)
+   ========================================================================== */
+@media (max-width: 992px) {
+    html, body { height: auto; overflow: visible; display: block; }
+    .hero { min-height: 50vh; }
+    .hero__container { grid-template-columns: 1fr; gap: 20px; }
+    .features__container { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .features__item:not(:last-child) { border-right: none; }
+    .banner-footer { height: auto; padding: 60px 0; }
+    .widget-wrapper { bottom: -20px; }
+    .navigation, .header__actions {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 20px;
+    }
+
+    /* Mostrar menú cuando está activo */
+    .navigation.is-active, .header__actions.is-active {
+        display: flex;
+    }
+
+    /* Forzar que el header se adapte si el menú se abre */
+    .header__container {
+        flex-wrap: wrap;
+    }
+
+    /* Estilos del botón Hamburguesa */
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .mobile-menu-btn span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--color-text-main);
+        border-radius: 2px;
+        transition: var(--transition-smooth);
+    }
+}
