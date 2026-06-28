@@ -44,6 +44,7 @@ body {
 
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
+h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 
 /* Contenedor Flex Principal */
 .main-content {
@@ -282,16 +283,27 @@ ul { list-style: none; }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
 /* ==========================================================================
-   8. RESPONSIVE BÁSICO (Permite scroll solo en móviles)
+   8. RESPONSIVE (Permite scroll en móviles, sin desbordamiento horizontal)
    ========================================================================== */
 @media (max-width: 992px) {
-    html, body { height: auto; overflow: visible; display: block; }
+    html, body { height: auto; overflow-x: hidden; overflow-y: auto; display: block; }
+
+    .main-content { overflow: visible; }
+
     .hero { min-height: 50vh; }
     .hero__container { grid-template-columns: 1fr; gap: 20px; }
+    .hero__title { font-size: 26px; }
+    .hero__badge { max-width: 100%; flex-wrap: wrap; }
+
     .features__container { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .features__item:not(:last-child) { border-right: none; }
+    .features__item { padding: 5px 10px; }
+    .features__item:first-child { padding-left: 10px; }
+
     .banner-footer { height: auto; padding: 60px 0; }
-    .widget-wrapper { bottom: -20px; }
+    .banner-footer__title { font-size: 24px; }
+    .widget-wrapper { bottom: 20px; }
+
     .navigation, .header__actions {
         display: none;
         width: 100%;
@@ -303,6 +315,12 @@ ul { list-style: none; }
     /* Mostrar menú cuando está activo */
     .navigation.is-active, .header__actions.is-active {
         display: flex;
+    }
+
+    /* Menú de navegación vertical en móvil */
+    .navigation.is-active .navigation__list {
+        flex-direction: column;
+        gap: 10px;
     }
 
     /* Forzar que el header se adapte si el menú se abre */
@@ -328,4 +346,13 @@ ul { list-style: none; }
         border-radius: 2px;
         transition: var(--transition-smooth);
     }
+}
+
+/* Pantallas muy pequeñas (≤ 576px) */
+@media (max-width: 576px) {
+    .hero__title { font-size: 22px; }
+    .banner-footer__title { font-size: 20px; }
+    .features__container { grid-template-columns: 1fr; }
+    .features__item { padding: 10px 0; }
+    .features__item:not(:last-child) { border-bottom: 1px solid var(--color-border-light); }
 }
