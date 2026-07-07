@@ -44,7 +44,6 @@ body {
 
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
-h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 
 /* Contenedor Flex Principal */
 .main-content {
@@ -179,6 +178,21 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
     font-size: 36px; font-weight: 500; line-height: 1.2;
     color: var(--color-text-main); margin-bottom: 24px;
 }
+.faro-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    vertical-align: text-bottom;
+    position: relative;
+    top: 0.1em;
+}
+.faro-brand__icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
 .hero__right { padding-top: 0; }
 .hero__description { font-size: 16px; color: var(--color-text-muted); line-height: 1.6; }
 
@@ -253,27 +267,20 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
     border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid var(--color-white);
 }
 .widget-btn {
-    width: 56px; height: 56px; background-color: var(--color-dark-blue);
+    width: 64px; height: 64px; background-color: var(--color-dark-blue);
     border: none; border-radius: 50%; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: var(--transition-smooth);
 }
 .widget-btn:hover { transform: scale(1.08); background-color: #0b3857; }
-.widget-btn__icon { position: relative; width: 24px; height: 24px; }
-
-/* Hélices del widget (Generadas con CSS) */
-.blade {
-    position: absolute; width: 9px; height: 9px;
-    background-color: #C3DAF0; border-radius: 50% 50% 0 50%;
-    transition: transform 0.3s ease;
+.widget-btn__icon {
+    width: 38px; height: 38px;
+    object-fit: contain;
+    display: block;
 }
-.blade:nth-child(1) { top: 0; left: 8px; transform: rotate(0deg); }
-.blade:nth-child(2) { top: 8px; right: 0; transform: rotate(90deg); }
-.blade:nth-child(3) { bottom: 0; left: 8px; transform: rotate(180deg); }
-.blade:nth-child(4) { top: 8px; left: 0; transform: rotate(270deg); }
 
 /* Rotar aspas al hacer hover */
-.widget-btn:hover .widget-btn__icon { animation: spin 3s linear infinite; }
+.widget-btn:hover .widget-btn__icon { transform: rotate(0deg); }
 
 /* Animaciones */
 @keyframes bounce {
@@ -283,27 +290,16 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
 /* ==========================================================================
-   8. RESPONSIVE (Permite scroll en móviles, sin desbordamiento horizontal)
+   8. RESPONSIVE BÁSICO (Permite scroll solo en móviles)
    ========================================================================== */
 @media (max-width: 992px) {
-    html, body { height: auto; overflow-x: hidden; overflow-y: auto; display: block; }
-
-    .main-content { overflow: visible; }
-
+    html, body { height: auto; overflow: visible; display: block; }
     .hero { min-height: 50vh; }
     .hero__container { grid-template-columns: 1fr; gap: 20px; }
-    .hero__title { font-size: 26px; }
-    .hero__badge { max-width: 100%; flex-wrap: wrap; }
-
     .features__container { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .features__item:not(:last-child) { border-right: none; }
-    .features__item { padding: 5px 10px; }
-    .features__item:first-child { padding-left: 10px; }
-
     .banner-footer { height: auto; padding: 60px 0; }
-    .banner-footer__title { font-size: 24px; }
-    .widget-wrapper { bottom: 20px; }
-
+    .widget-wrapper { bottom: -20px; }
     .navigation, .header__actions {
         display: none;
         width: 100%;
@@ -315,12 +311,6 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
     /* Mostrar menú cuando está activo */
     .navigation.is-active, .header__actions.is-active {
         display: flex;
-    }
-
-    /* Menú de navegación vertical en móvil */
-    .navigation.is-active .navigation__list {
-        flex-direction: column;
-        gap: 10px;
     }
 
     /* Forzar que el header se adapte si el menú se abre */
@@ -347,12 +337,17 @@ h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
         transition: var(--transition-smooth);
     }
 }
+/* Alineación y escalado para el ícono de la marca FARO */
+.faro-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em; /* Espacio entre el icono y la palabra FARO */
+    vertical-align: baseline;
+}
 
-/* Pantallas muy pequeñas (≤ 576px) */
-@media (max-width: 576px) {
-    .hero__title { font-size: 22px; }
-    .banner-footer__title { font-size: 20px; }
-    .features__container { grid-template-columns: 1fr; }
-    .features__item { padding: 10px 0; }
-    .features__item:not(:last-child) { border-bottom: 1px solid var(--color-border-light); }
+.faro-brand__icon {
+    width: 1.1em; /* Se adapta automáticamente al tamaño de la letra del <h1> */
+    height: 1.1em;
+    object-fit: contain;
+    transform: translateY(-2%); /* Ajuste fino óptico para centrar con las mayúsculas */
 }
