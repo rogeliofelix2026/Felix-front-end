@@ -1,127 +1,253 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FARO - Moodle x Innova Lab</title>
+    <meta name="description" content="FARO es un widget de accesibilidad para personalizar la experiencia de aprendizaje en Moodle.">
+    <title>FARO | Accesibilidad para Moodle</title>
+    <link rel="icon" type="image/png" href="imagen/faro-icono.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,500;0,600;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style2.css">
 </head>
-
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
-    <div class="top-bar">
-        <div class="top-bar__container">
-            <div class="top-bar__lang" aria-label="Selector de idioma">
-                <span>ES</span>
-            </div>
-        </div>
-    </div>
+    <!-- Header y navegación -->
+    <header class="site-header" id="inicio">
+        <div class="shell site-header__inner">
+            <a class="faro-wordmark" href="#inicio" aria-label="FARO, volver al inicio">
+                <img src="imagen/faro-icono.png" alt="">
+                <span>FARO</span>
+            </a>
 
-    <header class="header">
-        <div class="header__container">
-            <div class="header__logo-area">
-                <span class="logo-moodle">moodle</span>
-                <span class="logo-divider">×</span>
-                <div class="logo-innova">
-                    innova<span class="logo-innova__badge">lab</span>
-                </div>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+                <span class="sr-only">Abrir menú</span>
+                <span></span><span></span><span></span>
             </button>
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__item navigation__item--dropdown">
-                        <a href="#" class="navigation__link">Campus virtual</a>
-                    </li>
-                    <li class="navigation__item navigation__item--dropdown">
-                        <a href="#" class="navigation__link">Soluciones</a>
-                    </li>
-                    <li class="navigation__item navigation__item--dropdown">
-                        <a href="#" class="navigation__link">Sobre nosotros</a>
-                    </li>
-                    <li class="navigation__item navigation__item--dropdown">
-                        <a href="#" class="navigation__link">Recursos</a>
-                    </li>
-                </ul>
+
+            <nav class="main-navigation" id="main-navigation" aria-label="Navegación principal">
+                <a href="#beneficios">Herramientas</a>
+                <a href="#como-funciona">Cómo usar FARO</a>
+                <a href="#nosotros">Sobre FARO</a>
+                <a href="#contacto">Contacto</a>
             </nav>
 
-            <div class="header__actions">
-                <a href="#" class="btn btn--outline">Obtener Widget</a>
-                <a href="#" class="header__link-contact">Contacto</a>
-            </div>
+            <button class="button button--small button--outline js-open-widget" type="button">
+                Probar la demo
+            </button>
         </div>
     </header>
 
-    <main class="main-content">
-
-        <section class="hero">
-            <div class="hero__container">
-                <div class="hero__left">
-                    <div class="hero__badge">
-                        <span class="hero__badge-dot"></span>
-                        Soluciones Moodle x TalentoLab
+    <main id="contenido">
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="shell hero__grid">
+                <div class="hero__content">
+                    <p class="eyebrow"><span></span> Accesibilidad para Moodle</p>
+                    <h1 id="hero-title">FARO ilumina tu aprendizaje.</h1>
+                    <p class="hero__lead">El widget de accesibilidad que adapta Moodle a tus necesidades.</p>
+                    <p class="hero__description">
+                        Personalizá la tipografía, el contraste, la lectura y otros ajustes de accesibilidad
+                        directamente desde tu campus virtual.
+                    </p>
+                    <div class="hero__actions">
+                        <button class="button button--primary js-open-widget" type="button">Probar la demo</button>
+                        <a class="text-link" href="#como-funciona">Ver cómo usar FARO <span aria-hidden="true">→</span></a>
                     </div>
-                    <h1 class="hero__title">
-                        <span class="faro-brand">
-                            <img src="./imagen/faro-icono.png" alt="Icono de accesibilidad FARO" class="faro-brand__icon">
-                            FARO
-                        </span>, “ilumina tu aprendizaje”. El widget que pone la accesibilidad a tu alcance, y adaptada
-                        a vos.
-                    </h1>
-                    <a href="#" class="btn btn--primary">Start for free</a>
+                    <p class="demo-note">Explorá una demostración de las funciones de accesibilidad de FARO.</p>
                 </div>
 
-                <div class="hero__right">
-                    <p class="hero__description">
-                        Nuestra nueva herramienta de interoperabilidad accesible le permite adaptar el campus virtual a
-                        sus necesidades para una mejor experiencia de aprendizaje.
+                <div class="hero__visual">
+                    <div class="moodle-preview">
+                        <div class="moodle-preview__header" aria-hidden="true">
+                            <span class="moodle-preview__brand">Campus <b>virtual</b></span>
+                            <span>Página principal</span>
+                            <span class="is-current">Mis cursos</span>
+                            <span class="moodle-preview__avatar">BB</span>
+                        </div>
+
+                        <div class="moodle-preview__workspace" aria-hidden="true">
+                            <div class="moodle-preview__courses">
+                                <strong class="moodle-preview__heading">Mis cursos</strong>
+                                <span class="moodle-preview__subheading">Vista general de curso</span>
+                                <div class="moodle-preview__filters" aria-hidden="true">
+                                    <span>Todos⌄</span><span>Buscar</span><span>Ordenar⌄</span>
+                                </div>
+                                <div class="moodle-course">
+                                    <span class="moodle-course__image"></span>
+                                    <span class="moodle-course__name">Desarrollo Web 1</span>
+                                    <span class="moodle-course__category">Categoría 1</span>
+                                </div>
+                            </div>
+
+                            <div class="faro-preview">
+                                <div class="faro-preview__header">
+                                    <img src="imagen/faro-icono.png" alt="">
+                                    <span><strong>FARO</strong>Accesibilidad</span>
+                                </div>
+                                <span class="faro-preview__option"><b>♙</b> Mi perfil</span>
+                                <span class="faro-preview__option"><b>Aa</b> Lectura</span>
+                                <span class="faro-preview__option"><b>◐</b> Apariencia</span>
+                                <span class="faro-preview__option"><b>⚙</b> Ajustes</span>
+                                <span class="faro-preview__reset">↻ Restablecer</span>
+                            </div>
+                        </div>
+
+                        <button class="moodle-preview__faro js-open-widget" type="button" aria-label="Abrir demo de FARO">
+                            <img src="imagen/faro-icono.png" alt="">
+                        </button>
+                    </div>
+                    <p class="moodle-preview__caption">Vista ilustrativa de FARO integrado en Moodle</p>
+                    <div class="hero__halo hero__halo--one"></div>
+                    <div class="hero__halo hero__halo--two"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Herramientas -->
+        <section class="benefits" id="beneficios" aria-labelledby="benefits-title">
+            <div class="shell">
+                <div class="section-heading">
+                    <p class="eyebrow">Una experiencia personalizable</p>
+                    <h2 id="benefits-title">¿Qué podés hacer con FARO?</h2>
+                    <p>Encontrá herramientas para leer, navegar y aprender con mayor comodidad.</p>
+                </div>
+                <div class="benefit-grid">
+                    <article class="benefit-card">
+                        <span class="benefit-card__number">01</span>
+                        <h3>Lectura asistida</h3>
+                        <p>Escuchá el contenido y ajustá la velocidad de lectura desde el campus.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <span class="benefit-card__number">02</span>
+                        <h3>Apariencia</h3>
+                        <p>Modificá el contraste, los colores y la visualización del contenido.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <span class="benefit-card__number">03</span>
+                        <h3>Texto adaptable</h3>
+                        <p>Cambiá el tamaño, la tipografía y el espaciado para facilitar la lectura.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <span class="benefit-card__number">04</span>
+                        <h3>Perfiles predefinidos</h3>
+                        <p>Aplicá configuraciones de manera rápida y personalizalas según tus preferencias.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <span class="benefit-card__number">05</span>
+                        <h3>Navegación accesible</h3>
+                        <p>Recorré el campus con teclado, foco visible y controles organizados.</p>
+                    </article>
+                    <article class="benefit-card">
+                        <span class="benefit-card__number">06</span>
+                        <h3>Preferencias personales</h3>
+                        <p>Configurá los ajustes que necesitás para construir una experiencia propia.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo usar FARO -->
+        <section class="how-it-works" id="como-funciona" aria-labelledby="how-title">
+            <div class="shell how-it-works__grid">
+                <div>
+                    <p class="eyebrow">Cómo usar FARO</p>
+                    <h2 id="how-title">Accesibilidad al alcance de un clic</h2>
+                    <p class="section-copy">
+                        El panel reúne los ajustes en un mismo lugar para que puedas configurarlos
+                        sin salir del curso.
                     </p>
                 </div>
+                <ol class="steps">
+                    <li><span>1</span><div><strong>Abrí FARO</strong><p>Usá el botón flotante desde cualquier sección del campus.</p></div></li>
+                    <li><span>2</span><div><strong>Elegí tus ajustes</strong><p>Adaptá el tamaño del texto, el contraste y la visualización.</p></div></li>
+                    <li><span>3</span><div><strong>Seguí aprendiendo</strong><p>Continuá el recorrido con una experiencia configurada para vos.</p></div></li>
+                </ol>
             </div>
         </section>
 
-        <section class="features">
-            <div class="features__container">
-                <div class="features__item">
-                    <p>Lleva el diseño centrado en el ser humano a tu campus virtual. Totalmente configurable</p>
-                </div>
-                <div class="features__item">
-                    <p>Construido para ayudar personas</p>
-                </div>
-                <div class="features__item">
-                    <p>Actualizate incorporando lo último en tecnología: los agentes IA.</p>
-                </div>
-                <div class="features__item">
-                    <p>Perfiles preconfigurados, sin necesidad de perder tiempo</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="banner-footer">
-            <div class="banner-footer__container">
-                <h2 class="banner-footer__title">Human-First, porque tú eres nuestra</h2>
-
-                <div class="widget-wrapper" id="faro-widget">
-                    <div class="widget-tooltip">Try me !</div>
-                    <button class="widget-btn" aria-label="Probar widget FARO">
-                        <img src="./imagen/faro-icono.png" alt="Icono FARO" class="widget-btn__icon">
-                    </button>
+        <!-- Sobre FARO -->
+        <section class="human-first" id="nosotros" aria-labelledby="human-title">
+            <div class="shell human-first__inner">
+                <img src="imagen/faro-icono.png" alt="" class="human-first__icon">
+                <div>
+                    <p class="eyebrow">Nuestro enfoque</p>
+                    <h2 id="human-title">Menos barreras. Más autonomía para aprender.</h2>
+                    <p>FARO acompaña a cada estudiante dentro del campus y ofrece herramientas para adaptar la lectura, la apariencia y la navegación según sus preferencias.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Contacto -->
+        <section class="contact" id="contacto" aria-labelledby="contact-title">
+            <div class="shell contact__inner">
+                <div>
+                    <p class="eyebrow">Conocé FARO</p>
+                    <h2 id="contact-title">Conocé una forma más accesible de aprender.</h2>
+                </div>
+                <button class="button button--light js-open-widget" type="button">Probar la demo</button>
+            </div>
+        </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="shell site-footer__inner">
+            <a class="faro-wordmark faro-wordmark--footer" href="#inicio">
+                <img src="imagen/faro-icono.png" alt="">
+                <span>FARO</span>
+            </a>
+            <p>Desarrollado por el Equipo 13 en el marco de Innova Lab · 2026.</p>
+            <a href="#inicio">Volver arriba ↑</a>
+        </div>
+    </footer>
+
+    <!-- Panel de demostración -->
+    <dialog class="widget-panel" id="widget-panel" aria-labelledby="widget-title">
+        <div class="widget-panel__header">
+            <div class="widget-panel__brand">
+                <img src="imagen/faro-icono.png" alt="">
+                <div><h2 id="widget-title">FARO</h2><span>Demo de accesibilidad</span></div>
+            </div>
+            <button class="icon-button js-close-widget" type="button" aria-label="Cerrar panel">×</button>
+        </div>
+        <div class="widget-panel__content">
+            <p class="widget-panel__intro">Probá algunos ajustes de accesibilidad directamente sobre esta landing.</p>
+            <p class="widget-panel__disclaimer">
+                Esta demo aplica algunos ajustes sobre la landing. La experiencia completa de FARO funciona integrada en Moodle.
+            </p>
+
+            <label class="control-group" for="font-size">
+                <span><strong>Tamaño del texto</strong><output id="font-size-value" for="font-size">100%</output></span>
+                <input id="font-size" type="range" min="90" max="125" step="5" value="100">
+            </label>
+
+            <button class="preference-toggle" type="button" data-preference="contrast" aria-pressed="false">
+                <span><strong>Alto contraste</strong><small>Refuerza colores y bordes</small></span>
+                <span class="switch" aria-hidden="true"></span>
+            </button>
+            <button class="preference-toggle" type="button" data-preference="grayscale" aria-pressed="false">
+                <span><strong>Escala de grises</strong><small>Reduce la información de color</small></span>
+                <span class="switch" aria-hidden="true"></span>
+            </button>
+            <button class="preference-toggle" type="button" data-preference="readable" aria-pressed="false">
+                <span><strong>Lectura más clara</strong><small>Aumenta el espaciado del texto</small></span>
+                <span class="switch" aria-hidden="true"></span>
+            </button>
+
+            <button class="reset-button" id="reset-preferences" type="button">Restablecer preferencias</button>
+            <p class="save-status" id="save-status" role="status" aria-live="polite"></p>
+        </div>
+    </dialog>
+
+    <!-- Activador flotante de la demo -->
+    <button class="floating-faro js-open-widget" type="button" aria-label="Abrir demo de accesibilidad FARO">
+        <span>Probar la demo</span>
+        <img src="imagen/faro-icono.png" alt="">
+    </button>
 
     <script src="script.js"></script>
 </body>
-
 </html>
