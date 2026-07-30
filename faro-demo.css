@@ -1,0 +1,146 @@
+#faro-extension-root {
+    visibility: visible;
+}
+
+#faro-extension-root .faro-demo-badge {
+    position: fixed;
+    right: 88px;
+    bottom: 31px;
+    z-index: 100002;
+    display: none;
+    margin: 0;
+    padding: 6px 9px;
+    color: #123647;
+    border: 1px solid #d1dce5;
+    border-radius: 999px;
+    background: #fff9df;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    font-family: "Atkinson Hyperlegible", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#faro-extension-root.is-open .faro-demo-badge {
+    display: block;
+}
+
+#faro-extension-root .menu-list-item,
+#faro-extension-root .perfil-card,
+#faro-extension-root .perfil-card-full,
+#faro-extension-root .faro-demo-row {
+    width: 100%;
+    font: inherit;
+}
+
+#faro-extension-root .menu-list-item {
+    border: 0;
+    border-bottom: 1px solid var(--faro-border);
+    background: transparent;
+    text-align: left;
+}
+
+#faro-extension-root .menu-list-text strong,
+#faro-extension-root .menu-list-text small,
+#faro-extension-root .perfil-full-text strong,
+#faro-extension-root .perfil-full-text small,
+#faro-extension-root .sub-item-text strong,
+#faro-extension-root .sub-item-text small {
+    display: block;
+}
+
+#faro-extension-root .menu-list-text strong,
+#faro-extension-root .perfil-full-text strong,
+#faro-extension-root .sub-item-text strong {
+    color: var(--faro-text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#faro-extension-root .menu-list-text small,
+#faro-extension-root .perfil-full-text small,
+#faro-extension-root .sub-item-text small {
+    margin-top: 4px;
+    color: var(--faro-muted);
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+#faro-extension-root .perfil-card[aria-pressed="true"] {
+    border-color: var(--faro-primary);
+    box-shadow: 0 0 0 2px #f7d768;
+}
+
+#faro-extension-root .faro-demo-row {
+    cursor: pointer;
+    text-align: left;
+}
+
+#faro-extension-root .sub-menu-container input[type="range"] {
+    width: 100%;
+}
+
+#faro-extension-root .faro-demo-placeholder {
+    padding: 26px 12px;
+    color: var(--faro-muted);
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+#faro-extension-root.faro-demo-left .faro-btn,
+#faro-extension-root.faro-demo-left .menu-accesibilidad,
+#faro-extension-root.faro-demo-left .sub-menu-container,
+#faro-extension-root.faro-demo-left .faro-box {
+    right: auto !important;
+    left: 20px !important;
+}
+
+#faro-extension-root.faro-demo-left .faro-demo-badge {
+    right: auto;
+    left: 88px;
+}
+
+#faro-extension-root.faro-demo-left .faro-box::after {
+    right: auto;
+    left: 25px;
+    transform: rotate(225deg);
+}
+
+body.faro-align-center main {
+    text-align: center;
+}
+
+body.faro-align-right main {
+    text-align: right;
+}
+
+body.faro-align-left main {
+    text-align: left;
+}
+
+body.faro-font-sans main,
+body.faro-font-sans main *:not(#faro-extension-root *) {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body.faro-font-serif main,
+body.faro-font-serif main *:not(#faro-extension-root *) {
+    font-family: Georgia, "Times New Roman", serif !important;
+}
+
+body.faro-font-dyslexic main,
+body.faro-font-dyslexic main *:not(#faro-extension-root *) {
+    font-family: "Comic Sans MS", "OpenDyslexic", Arial, sans-serif !important;
+}
+
+@media (max-width: 560px) {
+    #faro-extension-root .faro-demo-badge {
+        right: 76px;
+        bottom: 27px;
+    }
+
+    #faro-extension-root.faro-demo-left .faro-demo-badge {
+        right: auto;
+        left: 76px;
+    }
+}

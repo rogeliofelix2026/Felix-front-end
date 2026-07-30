@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FARO es un widget de accesibilidad para personalizar la experiencia de aprendizaje en Moodle.">
+    <meta name="theme-color" content="#123647">
     <title>FARO | Accesibilidad para Moodle</title>
+    <link rel="canonical" href="https://home-faroinnovalab.netlify.app/">
     <link rel="icon" type="image/png" href="imagen/faro-icono.png">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FARO">
+    <meta property="og:title" content="FARO | Accesibilidad para Moodle">
+    <meta property="og:description" content="Personalizá la lectura, la apariencia y la navegación directamente desde tu campus virtual.">
+    <meta property="og:url" content="https://home-faroinnovalab.netlify.app/">
+    <meta property="og:image" content="https://home-faroinnovalab.netlify.app/imagen/faro-social.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="FARO, widget de accesibilidad para Moodle">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FARO | Accesibilidad para Moodle">
+    <meta name="twitter:description" content="Personalizá la lectura, la apariencia y la navegación directamente desde tu campus virtual.">
+    <meta name="twitter:image" content="https://home-faroinnovalab.netlify.app/imagen/faro-social.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="faro-widget.css">
+    <link rel="stylesheet" href="faro-demo.css">
 </head>
 <body>
     <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
@@ -31,11 +50,11 @@
                 <a href="#beneficios">Herramientas</a>
                 <a href="#como-funciona">Cómo usar FARO</a>
                 <a href="#nosotros">Sobre FARO</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#probar-faro">Probar FARO</a>
             </nav>
 
             <button class="button button--small button--outline js-open-widget" type="button">
-                Probar la demo
+                Explorá FARO
             </button>
         </div>
     </header>
@@ -53,10 +72,11 @@
                         directamente desde tu campus virtual.
                     </p>
                     <div class="hero__actions">
-                        <button class="button button--primary js-open-widget" type="button">Probar la demo</button>
+                        <button class="button button--primary js-open-widget" type="button">Explorá FARO</button>
                         <a class="text-link" href="#como-funciona">Ver cómo usar FARO <span aria-hidden="true">→</span></a>
                     </div>
-                    <p class="demo-note">Explorá una demostración de las funciones de accesibilidad de FARO.</p>
+                    <p class="demo-note">Prototipo funcional · explorá una demostración de las herramientas de FARO.</p>
+                    <p class="hero__audience">Pensado para estudiantes que necesitan adaptar la lectura, la apariencia o la navegación sin salir del curso.</p>
                 </div>
 
                 <div class="hero__visual">
@@ -75,31 +95,36 @@
                                 <div class="moodle-preview__filters" aria-hidden="true">
                                     <span>Todos⌄</span><span>Buscar</span><span>Ordenar⌄</span>
                                 </div>
-                                <div class="moodle-course">
-                                    <span class="moodle-course__image"></span>
-                                    <span class="moodle-course__name">Desarrollo Web 1</span>
-                                    <span class="moodle-course__category">Categoría 1</span>
+                                <div class="moodle-course-grid">
+                                    <article class="moodle-course moodle-course--web">
+                                        <span class="moodle-course__image"></span>
+                                        <span class="moodle-course__name">Desarrollo Web 1</span>
+                                    </article>
+                                    <article class="moodle-course moodle-course--ux">
+                                        <span class="moodle-course__image"></span>
+                                        <span class="moodle-course__name">Diseño UX/UI</span>
+                                    </article>
+                                    <article class="moodle-course moodle-course--data">
+                                        <span class="moodle-course__image"></span>
+                                        <span class="moodle-course__name">Análisis de datos</span>
+                                    </article>
                                 </div>
                             </div>
 
                             <div class="faro-preview">
-                                <div class="faro-preview__header">
-                                    <img src="imagen/faro-icono.png" alt="">
-                                    <span><strong>FARO</strong>Accesibilidad</span>
-                                </div>
-                                <span class="faro-preview__option"><b>♙</b> Mi perfil</span>
-                                <span class="faro-preview__option"><b>Aa</b> Lectura</span>
-                                <span class="faro-preview__option"><b>◐</b> Apariencia</span>
-                                <span class="faro-preview__option"><b>⚙</b> Ajustes</span>
-                                <span class="faro-preview__reset">↻ Restablecer</span>
+                                <span class="faro-preview__option"><span class="faro-preview__icon material-symbols-outlined" aria-hidden="true">person</span>Mi perfil</span>
+                                <span class="faro-preview__option"><span class="faro-preview__icon material-symbols-outlined" aria-hidden="true">menu_book</span>Lectura</span>
+                                <span class="faro-preview__option"><span class="faro-preview__icon material-symbols-outlined" aria-hidden="true">contrast</span>Apariencia</span>
+                                <span class="faro-preview__option"><span class="faro-preview__icon material-symbols-outlined" aria-hidden="true">settings</span>Ajustes</span>
                             </div>
                         </div>
-
-                        <button class="moodle-preview__faro js-open-widget" type="button" aria-label="Abrir demo de FARO">
-                            <img src="imagen/faro-icono.png" alt="">
-                        </button>
+                        <div class="moodle-preview__trigger-row">
+                            <span class="moodle-preview__trigger-visual" aria-hidden="true">
+                                <img src="imagen/faro-icono.png" alt="">
+                            </span>
+                        </div>
                     </div>
-                    <p class="moodle-preview__caption">Vista ilustrativa de FARO integrado en Moodle</p>
+                    <p class="moodle-preview__caption">Vista demostrativa de FARO dentro de Moodle</p>
                     <div class="hero__halo hero__halo--one"></div>
                     <div class="hero__halo hero__halo--two"></div>
                 </div>
@@ -122,28 +147,18 @@
                     </article>
                     <article class="benefit-card">
                         <span class="benefit-card__number">02</span>
-                        <h3>Apariencia</h3>
-                        <p>Modificá el contraste, los colores y la visualización del contenido.</p>
+                        <h3>Apariencia y texto</h3>
+                        <p>Adaptá la tipografía, el tamaño, el contraste y los colores según tus necesidades.</p>
                     </article>
                     <article class="benefit-card">
                         <span class="benefit-card__number">03</span>
-                        <h3>Texto adaptable</h3>
-                        <p>Cambiá el tamaño, la tipografía y el espaciado para facilitar la lectura.</p>
+                        <h3>Perfiles predefinidos</h3>
+                        <p>Aplicá combinaciones de ajustes de forma rápida y personalizalas cuando lo necesites.</p>
                     </article>
                     <article class="benefit-card">
                         <span class="benefit-card__number">04</span>
-                        <h3>Perfiles predefinidos</h3>
-                        <p>Aplicá configuraciones de manera rápida y personalizalas según tus preferencias.</p>
-                    </article>
-                    <article class="benefit-card">
-                        <span class="benefit-card__number">05</span>
                         <h3>Navegación accesible</h3>
                         <p>Recorré el campus con teclado, foco visible y controles organizados.</p>
-                    </article>
-                    <article class="benefit-card">
-                        <span class="benefit-card__number">06</span>
-                        <h3>Preferencias personales</h3>
-                        <p>Configurá los ajustes que necesitás para construir una experiencia propia.</p>
                     </article>
                 </div>
             </div>
@@ -180,14 +195,14 @@
             </div>
         </section>
 
-        <!-- Contacto -->
-        <section class="contact" id="contacto" aria-labelledby="contact-title">
+        <!-- Probar FARO -->
+        <section class="contact" id="probar-faro" aria-labelledby="contact-title">
             <div class="shell contact__inner">
                 <div>
-                    <p class="eyebrow">Conocé FARO</p>
-                    <h2 id="contact-title">Conocé una forma más accesible de aprender.</h2>
+                    <p class="eyebrow">Demostración funcional</p>
+                    <h2 id="contact-title">Probá cómo FARO adapta la experiencia de aprendizaje.</h2>
                 </div>
-                <button class="button button--light js-open-widget" type="button">Probar la demo</button>
+                <button class="button button--light js-open-widget" type="button">Abrir la demo</button>
             </div>
         </section>
     </main>
@@ -199,54 +214,193 @@
                 <img src="imagen/faro-icono.png" alt="">
                 <span>FARO</span>
             </a>
-            <p>Desarrollado por el Equipo 13 en el marco de Innova Lab · 2026.</p>
-            <a href="#inicio">Volver arriba ↑</a>
+            <div class="site-footer__project">
+                <p><strong>FARO · Innova Lab 2026</strong></p>
+                <p class="site-footer__disciplines">Contribuciones interdisciplinarias de UX/UI, Front-End, Back-End, Data y QA.</p>
+                <ul class="site-footer__credits" aria-label="Integrantes de FARO">
+                    <li>Aldana Brito</li>
+                    <li>Ana Ferreira</li>
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/barbara-bernhard/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn de Barbara Bernhard, abre en una pestaña nueva"
+                        >
+                            Barbara Bernhard <span aria-hidden="true">↗</span>
+                        </a>
+                    </li>
+                    <li>Felix Rogelio Salvatierra</li>
+                    <li>Leandro Cebreiros</li>
+                    <li>Luna Bujalesky</li>
+                    <li>Matias Emanuel Barreiro</li>
+                    <li>Romina Soledad Banegas</li>
+                    <li>Tomás Palmeyro</li>
+                </ul>
+            </div>
         </div>
     </footer>
 
-    <!-- Panel de demostración -->
-    <dialog class="widget-panel" id="widget-panel" aria-labelledby="widget-title">
-        <div class="widget-panel__header">
-            <div class="widget-panel__brand">
-                <img src="imagen/faro-icono.png" alt="">
-                <div><h2 id="widget-title">FARO</h2><span>Demo de accesibilidad</span></div>
+    <!-- Réplica frontal de FARO en modo demostración local -->
+    <div id="faro-extension-root" data-demo-mode="true">
+        <p class="faro-demo-badge">Demo local · sin conexión a cuentas</p>
+        <div id="faro-demo-status" class="sr-only" role="status" aria-live="polite"></div>
+
+        <div id="faro-voice-controls" class="faro-voice-controls" aria-label="Controles de lectura en voz alta" role="region">
+            <button id="faro-btn-pause-resume" type="button" aria-label="Pausar lectura">
+                <span class="material-symbols-outlined" id="faro-icon-pause-resume" aria-hidden="true">pause</span>
+            </button>
+            <button id="faro-btn-stop" type="button" aria-label="Detener lectura">
+                <span class="material-symbols-outlined" aria-hidden="true">stop</span>
+            </button>
+        </div>
+
+        <nav class="menu-accesibilidad" id="menuAccesibilidad" aria-label="Menú principal de accesibilidad" aria-hidden="true">
+            <button class="menu-item" type="button" data-open-submenu="submenuPerfil"><span class="icono material-symbols-outlined" aria-hidden="true">person</span>Mi perfil</button>
+            <button class="menu-item" type="button" data-open-submenu="submenuLectura"><span class="icono material-symbols-outlined" aria-hidden="true">menu_book</span>Lectura</button>
+            <button class="menu-item" type="button" data-open-submenu="submenuApariencia"><span class="icono material-symbols-outlined" aria-hidden="true">contrast</span>Apariencia</button>
+            <button class="menu-item" type="button" data-open-submenu="submenuAjustes"><span class="icono material-symbols-outlined" aria-hidden="true">settings</span>Ajustes</button>
+        </nav>
+
+        <section class="sub-menu-container" id="submenuPerfil" aria-hidden="true">
+            <header class="sub-menu-header">
+                <button class="sub-icon-btn" type="button" data-back-main aria-label="Volver"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></button>
+                <h2>Menú de accesibilidad</h2>
+                <button class="sub-icon-btn" type="button" data-close-faro aria-label="Cerrar"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+            </header>
+            <div class="sub-sub-header"><span class="material-symbols-outlined" aria-hidden="true">person</span><h2>Perfiles predefinidos</h2></div>
+            <div class="perfiles-grid">
+                <button class="perfil-card" type="button" data-profile="color"><span class="perfil-icon material-symbols-outlined" aria-hidden="true">invert_colors</span><h3>Filtros de color</h3><p>Adaptación de colores</p></button>
+                <button class="perfil-card" type="button" data-profile="voice"><span class="perfil-icon material-symbols-outlined" aria-hidden="true">record_voice_over</span><h3>Asistente por voz</h3><p>Apoyo para la navegación</p></button>
+                <button class="perfil-card" type="button" data-profile="fonts"><span class="perfil-icon material-symbols-outlined" aria-hidden="true">format_size</span><h3>Fuentes legibles</h3><p>Texto más claro y grande</p></button>
+                <button class="perfil-card" type="button" data-profile="safety"><span class="perfil-icon material-symbols-outlined" aria-hidden="true">ssid_chart</span><h3>Seguridad visual</h3><p>Reduce estímulos visuales</p></button>
+                <button class="perfil-card" type="button" data-profile="visibility"><span class="perfil-icon material-symbols-outlined" aria-hidden="true">visibility</span><h3>Visibilidad</h3><p>Optimiza la claridad</p></button>
+                <button class="perfil-card" type="button" data-profile="focus"><span class="perfil-icon material-symbols-outlined" aria-hidden="true">center_focus_strong</span><h3>Enfoque</h3><p>Reduce distracciones</p></button>
             </div>
-            <button class="icon-button js-close-widget" type="button" aria-label="Cerrar panel">×</button>
-        </div>
-        <div class="widget-panel__content">
-            <p class="widget-panel__intro">Probá algunos ajustes de accesibilidad directamente sobre esta landing.</p>
-            <p class="widget-panel__disclaimer">
-                Esta demo aplica algunos ajustes sobre la landing. La experiencia completa de FARO funciona integrada en Moodle.
-            </p>
-
-            <label class="control-group" for="font-size">
-                <span><strong>Tamaño del texto</strong><output id="font-size-value" for="font-size">100%</output></span>
-                <input id="font-size" type="range" min="90" max="125" step="5" value="100">
-            </label>
-
-            <button class="preference-toggle" type="button" data-preference="contrast" aria-pressed="false">
-                <span><strong>Alto contraste</strong><small>Refuerza colores y bordes</small></span>
-                <span class="switch" aria-hidden="true"></span>
+            <button class="perfil-card-full" type="button" data-open-submenu="submenuAjustesVisuales">
+                <span class="perfil-icon material-symbols-outlined" aria-hidden="true">manage_accounts</span>
+                <span class="perfil-full-text"><strong>Personalizá tu perfil</strong><small>Ajustá cada configuración según tus preferencias.</small></span>
+                <span class="perfil-chevron material-symbols-outlined" aria-hidden="true">chevron_right</span>
             </button>
-            <button class="preference-toggle" type="button" data-preference="grayscale" aria-pressed="false">
-                <span><strong>Escala de grises</strong><small>Reduce la información de color</small></span>
-                <span class="switch" aria-hidden="true"></span>
-            </button>
-            <button class="preference-toggle" type="button" data-preference="readable" aria-pressed="false">
-                <span><strong>Lectura más clara</strong><small>Aumenta el espaciado del texto</small></span>
-                <span class="switch" aria-hidden="true"></span>
-            </button>
+        </section>
 
-            <button class="reset-button" id="reset-preferences" type="button">Restablecer preferencias</button>
-            <p class="save-status" id="save-status" role="status" aria-live="polite"></p>
-        </div>
-    </dialog>
+        <section class="sub-menu-container" id="submenuLectura" aria-hidden="true">
+            <header class="sub-menu-header">
+                <button class="sub-icon-btn" type="button" data-back-main aria-label="Volver"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></button>
+                <h2>Menú de accesibilidad</h2>
+                <button class="sub-icon-btn" type="button" data-close-faro aria-label="Cerrar"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+            </header>
+            <div class="sub-sub-header"><span class="material-symbols-outlined" aria-hidden="true">record_voice_over</span><h2>Lectura asistida</h2></div>
+            <div class="sub-setting-row">
+                <div class="sub-item-text"><h3 id="label-voice">Asistencia por voz</h3><p>Leé una muestra en voz alta.</p></div>
+                <label class="sub-switch"><input type="checkbox" id="check-voice" data-toggle="voice" aria-labelledby="label-voice"><span class="sub-slider sub-round" aria-hidden="true"></span></label>
+            </div>
+            <div class="sub-setting-row">
+                <div class="sub-item-text"><h3 id="label-voice-speed">Velocidad</h3><p>Ajustá la rapidez de lectura.</p></div>
+                <div class="sub-slider-control"><span>Lenta</span><input type="range" id="voice-speed" min="0" max="100" value="50" aria-labelledby="label-voice-speed"><span>Rápida</span></div>
+            </div>
+            <div class="sub-setting-row">
+                <div class="sub-item-text"><h3 id="label-voice-volume">Volumen</h3><p>Nivel de salida de audio.</p></div>
+                <div class="sub-slider-control"><span class="material-symbols-outlined" aria-hidden="true">volume_down</span><input type="range" id="voice-volume" min="0" max="100" value="100" aria-labelledby="label-voice-volume"><span class="material-symbols-outlined" aria-hidden="true">volume_up</span></div>
+            </div>
+        </section>
 
-    <!-- Activador flotante de la demo -->
-    <button class="floating-faro js-open-widget" type="button" aria-label="Abrir demo de accesibilidad FARO">
-        <span>Probar la demo</span>
-        <img src="imagen/faro-icono.png" alt="">
-    </button>
+        <section class="sub-menu-container" id="submenuApariencia" aria-hidden="true">
+            <header class="sub-menu-header">
+                <button class="sub-icon-btn" type="button" data-back-main aria-label="Volver"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></button>
+                <h2>Menú de accesibilidad</h2>
+                <button class="sub-icon-btn" type="button" data-close-faro aria-label="Cerrar"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+            </header>
+            <div class="sub-sub-header"><span class="material-symbols-outlined" aria-hidden="true">contrast</span><h2>Apariencia</h2></div>
+            <button class="menu-list-item" type="button" data-open-submenu="submenuTexto"><span class="menu-list-icon material-symbols-outlined" aria-hidden="true">text_fields</span><span class="menu-list-text"><strong>Texto</strong><small>Fuente, tamaño y alineación</small></span></button>
+            <button class="menu-list-item" type="button" data-open-submenu="submenuAjustesVisuales"><span class="menu-list-icon material-symbols-outlined" aria-hidden="true">display_settings</span><span class="menu-list-text"><strong>Ajustes visuales</strong><small>Brillo, contraste y color</small></span></button>
+            <button class="menu-list-item" type="button" data-open-submenu="submenuTecladoVirtual"><span class="menu-list-icon material-symbols-outlined" aria-hidden="true">keyboard</span><span class="menu-list-text"><strong>Teclado virtual</strong><small>Vista demostrativa</small></span></button>
+        </section>
+
+        <section class="sub-menu-container" id="submenuTexto" aria-hidden="true">
+            <header class="sub-menu-header">
+                <button class="sub-icon-btn" type="button" data-open-submenu="submenuApariencia" aria-label="Volver"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></button>
+                <h2>Apariencia</h2>
+                <button class="sub-icon-btn" type="button" data-close-faro aria-label="Cerrar"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+            </header>
+            <div class="sub-sub-header"><span class="material-symbols-outlined" aria-hidden="true">text_fields</span><h2>Texto</h2></div>
+            <div class="sub-setting-row">
+                <div class="sub-item-text"><h3>Fuente</h3><p>Elegí una tipografía para la landing.</p></div>
+                <select id="demo-font-family" class="faro-select">
+                    <option value="default">Tipografía original</option>
+                    <option value="sans">Sans Serif</option>
+                    <option value="serif">Serif</option>
+                    <option value="dyslexic">Lectura accesible</option>
+                </select>
+            </div>
+            <div class="sub-setting-row">
+                <div class="sub-item-text"><h3>Tamaño de texto</h3><p>Aumentá o reducí el contenido.</p></div>
+                <div class="text-option-group" role="group" aria-label="Tamaño de texto">
+                    <button class="size-pill small" type="button" data-text-size="small"><span class="preview-aa">Aa</span><span>Pequeño</span></button>
+                    <button class="size-pill normal active" type="button" data-text-size="normal"><span class="preview-aa">Aa</span><span>Normal</span></button>
+                    <button class="size-pill large" type="button" data-text-size="large"><span class="preview-aa">Aa</span><span>Grande</span></button>
+                </div>
+            </div>
+            <div class="sub-setting-row">
+                <div class="sub-item-text"><h3>Alineación</h3><p>Elegí cómo se presenta el texto principal.</p></div>
+                <div class="text-option-group" role="group" aria-label="Alineación de texto">
+                    <button class="align-pill active" type="button" data-alignment="left" aria-label="Alinear a la izquierda"><span class="material-symbols-outlined" aria-hidden="true">format_align_left</span></button>
+                    <button class="align-pill" type="button" data-alignment="center" aria-label="Centrar"><span class="material-symbols-outlined" aria-hidden="true">format_align_center</span></button>
+                    <button class="align-pill" type="button" data-alignment="right" aria-label="Alinear a la derecha"><span class="material-symbols-outlined" aria-hidden="true">format_align_right</span></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="sub-menu-container" id="submenuAjustesVisuales" aria-hidden="true">
+            <header class="sub-menu-header">
+                <button class="sub-icon-btn" type="button" data-open-submenu="submenuApariencia" aria-label="Volver"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></button>
+                <h2>Apariencia</h2>
+                <button class="sub-icon-btn" type="button" data-close-faro aria-label="Cerrar"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+            </header>
+            <div class="sub-sub-header"><span class="material-symbols-outlined" aria-hidden="true">display_settings</span><h2>Ajustes visuales</h2></div>
+            <div class="sub-setting-row"><div class="sub-item-text"><h3>Brillo</h3><p><output id="brightness-output">Estándar</output></p></div><input type="range" id="brightness-control" min="50" max="150" step="10" value="100"></div>
+            <div class="sub-setting-row"><div class="sub-item-text"><h3>Contraste</h3><p><output id="contrast-output">Estándar</output></p></div><input type="range" id="contrast-control" min="50" max="150" step="10" value="100"></div>
+            <div class="sub-setting-row"><div class="sub-item-text"><h3>Saturación</h3><p><output id="saturation-output">Estándar</output></p></div><input type="range" id="saturation-control" min="0" max="150" step="10" value="100"></div>
+            <div class="sub-setting-row sub-toggle-item"><div class="sub-item-text"><h3 id="label-high-contrast">Contraste inteligente</h3><p>Refuerza colores y bordes</p></div><label class="sub-switch"><input type="checkbox" data-toggle="highContrast" aria-labelledby="label-high-contrast"><span class="sub-slider sub-round"></span></label></div>
+            <div class="sub-setting-row sub-toggle-item"><div class="sub-item-text"><h3 id="label-grayscale">Escala de grises</h3><p>Reduce la información de color</p></div><label class="sub-switch"><input type="checkbox" data-toggle="grayscale" aria-labelledby="label-grayscale"><span class="sub-slider sub-round"></span></label></div>
+            <div class="sub-setting-row sub-toggle-item"><div class="sub-item-text"><h3 id="label-dark-mode">Modo oscuro</h3><p>Reduce el brillo general</p></div><label class="sub-switch"><input type="checkbox" data-toggle="darkMode" aria-labelledby="label-dark-mode"><span class="sub-slider sub-round"></span></label></div>
+        </section>
+
+        <section class="sub-menu-container" id="submenuTecladoVirtual" aria-hidden="true">
+            <header class="sub-menu-header">
+                <button class="sub-icon-btn" type="button" data-open-submenu="submenuApariencia" aria-label="Volver"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></button>
+                <h2>Apariencia</h2>
+                <button class="sub-icon-btn" type="button" data-close-faro aria-label="Cerrar"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+            </header>
+            <div class="sub-sub-header"><span class="material-symbols-outlined" aria-hidden="true">keyboard</span><h2>Teclado virtual</h2></div>
+            <p class="faro-demo-placeholder">En Moodle, esta opción se habilita al seleccionar un campo de escritura.</p>
+        </section>
+
+        <section class="sub-menu-container" id="submenuAjustes" aria-hidden="true">
+            <header class="sub-menu-header">
+                <button class="sub-icon-btn" type="button" data-back-main aria-label="Volver"><span class="material-symbols-outlined" aria-hidden="true">arrow_back</span></button>
+                <h2>Menú de accesibilidad</h2>
+                <button class="sub-icon-btn" type="button" data-close-faro aria-label="Cerrar"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+            </header>
+            <div class="sub-sub-header"><span class="material-symbols-outlined" aria-hidden="true">settings</span><h2>Ajustes</h2></div>
+            <button class="sub-setting-row sub-toggle-item faro-demo-row" type="button" id="toggle-widget-position"><span class="sub-item-text"><strong>Posición del ícono</strong><small>Cambiar de lado</small></span><span class="material-symbols-outlined" aria-hidden="true">swap_horiz</span></button>
+            <div class="sub-setting-row sub-toggle-item faro-coming-soon"><span class="sub-item-text"><strong>Tamaño del ícono</strong><small>Escala del botón</small></span><span class="faro-status-label">Próximamente</span></div>
+            <button class="sub-setting-row sub-toggle-item faro-reset-row" type="button" id="request-demo-reset"><span class="sub-item-text"><strong>Restablecer todo</strong><small>Volver a la configuración inicial</small></span><span class="material-symbols-outlined" aria-hidden="true">restart_alt</span></button>
+        </section>
+
+        <dialog id="faro-reset-dialog" class="faro-confirm-dialog" aria-labelledby="faro-reset-title">
+            <h2 id="faro-reset-title">¿Restablecer todos los ajustes?</h2>
+            <p>Se borrarán las preferencias guardadas por esta demo en el navegador.</p>
+            <div class="faro-confirm-actions">
+                <button type="button" class="faro-confirm-cancel" id="cancel-demo-reset">Cancelar</button>
+                <button type="button" class="faro-confirm-reset" id="confirm-demo-reset">Restablecer</button>
+            </div>
+        </dialog>
+
+        <button class="faro-btn js-open-widget" id="btnFlotante" type="button" aria-label="Abrir herramientas de accesibilidad" aria-expanded="false" aria-keyshortcuts="Alt+Shift+F">
+            <img src="imagen/faro-icono.png" alt="" class="logo">
+        </button>
+    </div>
 
     <script src="script.js"></script>
 </body>
