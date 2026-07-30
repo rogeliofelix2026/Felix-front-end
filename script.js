@@ -346,10 +346,21 @@ document.addEventListener('click', (event) => {
     if (readableTarget) speak(readableTarget.innerText);
 });
 
+const closeMobileMenu = () => {
+    mainNavigation.classList.remove('is-open');
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    mobileMenuButton.querySelector('.sr-only').textContent = 'Abrir menú';
+};
+
 document.addEventListener('keydown', (event) => {
     if (event.altKey && event.shiftKey && event.key.toLowerCase() === 'f') {
         event.preventDefault();
         toggleFaro();
+    }
+    if (event.key === 'Escape' && mobileMenuButton.getAttribute('aria-expanded') === 'true') {
+        event.preventDefault();
+        closeMobileMenu();
+        mobileMenuButton.focus();
     }
     if (event.key === 'Escape' && root.classList.contains('is-open') && !resetDialog.open) {
         event.preventDefault();
@@ -365,11 +376,7 @@ mobileMenuButton.addEventListener('click', () => {
 });
 
 mainNavigation.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-        mainNavigation.classList.remove('is-open');
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-        mobileMenuButton.querySelector('.sr-only').textContent = 'Abrir menú';
-    });
+    link.addEventListener('click', closeMobileMenu);
 });
 
 applyState();

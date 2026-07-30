@@ -269,16 +269,6 @@ body.is-dark-demo .hero__audience { color: #dbeae7; }
 .faro-preview__icon {
     width: 20px; color: var(--faro-primary); text-align: center; font-size: 1rem;
 }
-.moodle-preview__trigger-row {
-    position: absolute; z-index: 4; right: 12px; bottom: -30px;
-    display: flex; align-items: center; pointer-events: none;
-}
-.moodle-preview__trigger-visual {
-    width: 60px; height: 60px; display: grid; flex: 0 0 60px; place-items: center;
-    border: 4px solid var(--white); border-radius: 50%; background: var(--navy);
-    box-shadow: 0 10px 24px rgba(18,54,71,.28);
-}
-.moodle-preview__trigger-visual img { width: 43px; height: 43px; }
 .moodle-preview__caption {
     position: relative; z-index: 3; width: min(100%, 580px); margin: 13px 0 0;
     padding-right: 70px; color: var(--muted); font-size: .72rem; text-align: center;
@@ -350,6 +340,12 @@ body.is-dark-demo .hero__audience { color: #dbeae7; }
     margin: 0 7px; color: #6f9199; content: "·";
 }
 .faro-wordmark--footer { color: var(--white); }
+.faro-wordmark--footer span {
+    color: var(--white);
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+}
 .faro-wordmark--footer img { width: 32px; height: 32px; }
 
 /* 10. Botón flotante */
@@ -490,9 +486,6 @@ body.demo-panel-left .floating-faro { right: auto; left: 26px; }
     .faro-preview { margin-top: 56px; padding: 8px; border-radius: 10px; }
     .faro-preview__option { gap: 3px; margin: 4px 0; padding: 5px 4px; font-size: .49rem; }
     .faro-preview__icon { width: 14px; font-size: .75rem; }
-    .moodle-preview__trigger-row { right: 8px; bottom: -25px; }
-    .moodle-preview__trigger-visual { width: 50px; height: 50px; flex-basis: 50px; }
-    .moodle-preview__trigger-visual img { width: 35px; height: 35px; }
     .benefits, .how-it-works { padding: 72px 0; }
     .benefit-grid { grid-template-columns: 1fr; }
     .benefit-card { min-height: 0; }
