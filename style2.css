@@ -339,13 +339,6 @@ body.is-dark-demo .hero__audience { color: #dbeae7; }
 .site-footer__credits li:not(:last-child)::after {
     margin: 0 7px; color: #6f9199; content: "·";
 }
-.faro-wordmark--footer { color: var(--white); }
-.faro-wordmark--footer span {
-    color: var(--white);
-    background: none;
-    -webkit-background-clip: initial;
-    background-clip: initial;
-}
 .faro-wordmark--footer img { width: 32px; height: 32px; }
 
 /* 10. Botón flotante */
